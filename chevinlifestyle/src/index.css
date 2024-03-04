@@ -122,21 +122,105 @@
   margin-top: 70px;
 }
 .prod-explore-heading{
-  margin-left:600px;
+  text-align: center;
+  font-weight: bold;
 }
 .prod-explore-images{
   display: flex;
-  margin-left: 30px;
+  margin-left: 15px;
   margin-top: 30px;
   margin-bottom: 40px;
+  margin-right: 30px;
 }
-.prod-explore-image{
+.prod-explore-image-container{
  
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35) ;
   
   width: 500rem;
-  height: 500px;
+  height: 450px;
   margin-right: 30px;
+  cursor: pointer;
+}
+.prod-explore-image{
+  width: 350px;
+}
+.prod-explore-image:hover{
+  width:355px;
+}
+.prod-explore-image-heading{
+text-align: center;
+
+}
+.prod-explore-image-heading:hover{
+  text-decoration:underline;
+  text-decoration-thickness: 1.5px;
+}
+.top-selling{
+  display: flex;
+  margin-top:50px;
+}
+.top-selling-prod-1-container{
+  margin-left:15px;
+  width:750px;
+  height:720px;
+  
+  text-align:left;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35) ;
+}
+.top-selling-prod-1-image{
+  width: 700px;
+  height: 700px;
+  display: inline-block;
+  cursor: pointer;
+}
+.top-selling-prod-1-image:hover{
+  width: 705px;
+}
+.top-selling-prod-2-container{
+  margin-left: 40px;
+}
+.top-selling-prod-2{
+  display: flex;
+}
+.top-selling-prod-2-image1{
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35) ;
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+}
+.top-selling-prod-2-image1:hover{
+  width: 355px;
+}
+.top-selling-prod-2-info{
+  margin-top: 50px;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 10px;
+  font-weight:normal;
+  /* text-align: left; */
+}
+.top-selling-prod-2-image2{
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35) ;
+  width: 350px;
+  height: 350px;
+  margin-left:120px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.top-selling-prod-2-image2:hover{
+  width: 355px;
+}
+.top-selling-prod-3{
+  display: flex;
+}
+.shop-now-button{
+  background-color: white;
+  margin-top:150px;
+  width:200px;
+  height:75px;
+  margin-left:70px;
+  border-radius: 200px;
+  border: 5px double black;
 }
 .maps iframe{
   width: 100%;
