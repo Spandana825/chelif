@@ -25,7 +25,7 @@ const Header = () => {
     <Link className="navbar-brand" to="/">
     <FaShoppingCart />
     </Link>
-    <Link className="navbar-brand" to="/">
+    <Link className="navbar-brand" to="/register">
      <FaUser/>
     </Link>
     <Link className="navbar-brand" to="/">

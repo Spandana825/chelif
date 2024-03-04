@@ -175,6 +175,7 @@ text-align: center;
 }
 .top-selling-prod-1-image:hover{
   width: 705px;
+  height: 705px;
 }
 .top-selling-prod-2-container{
   margin-left: 40px;
@@ -190,6 +191,7 @@ text-align: center;
 }
 .top-selling-prod-2-image1:hover{
   width: 355px;
+  height: 355px;
 }
 .top-selling-prod-2-info{
   margin-top: 50px;
@@ -209,6 +211,7 @@ text-align: center;
 }
 .top-selling-prod-2-image2:hover{
   width: 355px;
+  height: 355px;
 }
 .top-selling-prod-3{
   display: flex;
@@ -343,4 +346,11 @@ h1.with-padding{
 } */
 .aboutus1img{
   justify-content: center;
+}
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  flex-direction: column;
 }
