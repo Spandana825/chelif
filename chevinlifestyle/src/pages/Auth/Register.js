@@ -1,22 +1,41 @@
 import React,{useState} from 'react'
 import Layout from '../../components/Layout/Layout'
-import {toast} from 'react-toastify'
+import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
+import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 const Register = () => {
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     const [phone,setPhone]=useState("")
     const [address,setAddress]=useState("")
-
-    const handleSubmit=(e)=>{
+    const navigate=useNavigate();
+    const handleSubmit= async (e)=>{
        e.preventDefault()
-       console.log(name,email,password,phone,address);
-       toast.success("Registered successfully")
+       try{
+         const res= await axios.post('/api/v1/auth/register',{name,email,password,phone,address});
+         if(res && res.data.success){
+          toast.success(res.data.message)
+          navigate("/login")
+         }
+         else{
+          toast.error(res.data.message)
+         }
+          
+       }
+       catch(e){
+        console.log(e)
+        toast.error("something went wrong")
+       }
     };
+    console.log(process.env.REACT_APP_API)
   return (
    <Layout title={"Register-Chevin lifestyle"}>
+    <h1 className='register-now' >Register here</h1>
     <div className='register'>
-    <h1 >Register page</h1>
+    
+    <div className='register-box'>
     <form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="exampleInputName" className="form-label">
@@ -98,7 +117,8 @@ const Register = () => {
     Submit
   </button>
 </form>
-
+</div>
+<h4>Already a user? <span><Link to="/login">Login here</Link></span></h4>
     </div>
     
      

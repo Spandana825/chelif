@@ -7,7 +7,11 @@ import { FaHeart } from "react-icons/fa";
 const Header = () => {
   return (
     <div className="header">
-    <div className="header-1"></div>
+    <div className="header-1">
+      
+      <Link to="/"><img className="logo2"src="/images/logo2.png " alt='img'/></Link>
+      <Link to="/"><img className="logo1"src="/images/logo1.png " alt='img'/></Link>
+    </div>
     <div className="header-2">
         {/* <div className="nav-items">
                 <ul className='nav-itmes-list'>

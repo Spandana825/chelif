@@ -1,13 +1,97 @@
 import Layout from "../components/Layout/Layout";
+import Carousal from "./Carousal";
 
  
 const Home=()=>{
     return(
         <Layout title={"Chevin Lifetsyle"}>
         <div className="img-carousal">
-            <div className="image1">
+          <Carousal/>
+            {/* <div className="image1">
             <img src="/images/chevin.png" alt="bagimage"></img>
-            </div>
+            </div> */}
+            {/* <div
+  id="carouselExampleIndicators"
+  className="carousel slide"
+  data-ride="carousel"
+>
+  <ol className="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to={0}
+      className="active"
+    />
+    <li data-target="#carouselExampleIndicators" data-slide-to={1} />
+    <li data-target="#carouselExampleIndicators" data-slide-to={2} />
+  </ol>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img className="d-block w-100" src="/images/chevin.png" alt="First slide" />
+    </div>
+    <div className="carousel-item active">
+      <img className="d-block w-100" src="/images/banr.png" alt="Second slide" />
+    </div>
+    <div className="carousel-item active">
+      <img className="d-block w-100" src="/images/chevin.png" alt="Third slide" />
+    </div>
+  </div>
+  <a
+    className="carousel-control-prev"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="prev"
+  >
+    <span className="carousel-control-prev-icon" aria-hidden="true" />
+    <span className="sr-only">Previous</span>
+  </a>
+  <a
+    className="carousel-control-next"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="next"
+  >
+    <span className="carousel-control-next-icon" aria-hidden="true" />
+    <span className="sr-only">Next</span>
+  </a>
+</div> */}
+{/* ================try */}
+{/* <div
+  id="carouselExampleControls"
+  className="carousel slide"
+  data-ride="carousel"
+>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img className="d-block w-100" src="/images/chevin.png" alt="First slide" />
+    </div>
+    <div className="carousel-item">
+      <img className="d-block w-100" src="/images/banr.png" alt="Second slide" />
+    </div>
+    <div className="carousel-item">
+      <img className="d-block w-100" src="/images/chevin.png" alt="Third slide" />
+    </div>
+  </div>
+  <a
+    className="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
+    <span className="carousel-control-prev-icon" aria-hidden="true" />
+    <span className="sr-only">Previous</span>
+  </a>
+  <a
+    className="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
+    <span className="carousel-control-next-icon" aria-hidden="true" />
+    <span className="sr-only">Next</span>
+  </a>
+</div> */}
+
+
             <div className="prod-explore">
                 <h1 className="prod-explore-heading">DIVE AND EXPLORE OUR COLLECTIONS</h1>
                 <div className="prod-explore-images" >
