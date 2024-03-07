@@ -24,7 +24,7 @@ const Login = () => {
        }
        catch(e){
         console.log(e)
-        toast.error("something went wrong")
+        toast.error("something went wrong, please check your email and password")
        }
     };
     console.log(process.env.REACT_APP_API)

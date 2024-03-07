@@ -13,11 +13,6 @@ const slideImages=[
     {
     url:"/images/cb3.png"
     },
-    {
-      url:"/images/TR.png"
-      },
-   
-    
     
 ];
 const divstyle={

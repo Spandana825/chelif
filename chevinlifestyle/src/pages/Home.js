@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import Carousal from "./Carousal";
+import Aboutchevin from "./Aboutchevin";
 
  
 const Home=()=>{
@@ -97,24 +99,28 @@ const Home=()=>{
                 <div className="prod-explore-images" >
                     <div className="prod-explore-image-container " onClick={()=>console.log("clicked")}>
                       <img className="prod-explore-image" src="/images/backpacks.jpg" alt="duffle"/>
-                      <h2 className="prod-explore-image-heading">BACKPACKS</h2>
+                      {/* <button className="explore-now1"> →</button> */}
+                      <h2 className="prod-explore-image-heading">Backpacks</h2>
                     </div>
                     
                     <div className="prod-explore-image-container" onClick={()=>console.log("clicked")}>
                     <img className="prod-explore-image" src="/images/Duffle.png" alt="duffle"/>
-                    <h2 className="prod-explore-image-heading">DUFFLE BAGS</h2>
+                    {/* <button className="explore-now">EXPLORE NOW →</button> */}
+                    <h2 className="prod-explore-image-heading">Duffle Bags</h2>
                     </div>
                     <div className="prod-explore-image-container" onClick={()=>console.log("clicked")}>
                     <img className="prod-explore-image" src="/images/laptop.png" alt="duffle"/>
-                    <h2 className="prod-explore-image-heading">LAPTOP BAGS</h2>
+                    {/* <button className="explore-now">EXPLORE NOW →</button> */}
+                    <h2 className="prod-explore-image-heading">Laptop Bags</h2>
                     </div>
                     <div className="prod-explore-image-container" onClick={()=>console.log("clicked")}>
                     <img className="prod-explore-image" src="/images/daypacks.png" alt="duffle"/>
-                    <h2 className="prod-explore-image-heading">DAYPACKS</h2>
+                    {/* <button className="explore-now">EXPLORE NOW →</button> */}
+                    <h2 className="prod-explore-image-heading">Daypacks </h2>
                     </div>
                 </div>
             </div>
-            <h1 className="prod-explore-heading">OUR TOP SELLING PRODUCTS</h1>
+            <h1 className="top-selling-heading">OUR TOP SELLING PRODUCTS</h1>
          <div className="top-selling">
        
             <div className="top-selling-prod-1-container">
@@ -129,7 +135,7 @@ const Home=()=>{
             </div>
             <div className="top-selling-prod-3">
             <div>
-                <button  className=" shop-now-button"onClick={()=>console.log("clicked")}>SHOP NOW</button>
+              <Link to="/*">  <button  className=" shop-now-button"onClick={()=>console.log("clicked")}>SHOP NOW</button></Link>
             </div>
             <div>
                 <img className="top-selling-prod-2-image2" src="/images/topselling3.jpg" alt="top3"onClick={()=>console.log("clicked")}/>
@@ -144,6 +150,9 @@ const Home=()=>{
 
          </div>
             
+        </div>
+        <div className="about-chevin">
+          <Aboutchevin/>
         </div>
         </Layout>
     )

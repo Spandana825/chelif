@@ -1,4 +1,5 @@
 import React from 'react'
+import 'primeicons/primeicons.css';
 import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
@@ -14,12 +15,19 @@ const Footer = () => {
       <div className="footer-menu">
   <Link to="/about" className="footer-link">About</Link>
   <Link className="footer-link">Account</Link>
-  <Link className="footer-link">Careers</Link>
+  <Link to="/careers" className="footer-link">Careers</Link>
   <Link to="/contact" className="footer-link">Contact us</Link>
   
       </div>
+      
       <div className='social-icons'>
-        <h1>social icons logo</h1>
+        
+    <Link className='link' to="https://www.instagram.com/chevin_lifestyle/">  <i className="pi pi-instagram" style={{ fontSize: '3rem' }}></i></Link>
+    <Link className='link' to="">   <i className="pi pi-facebook" style={{ fontSize: '3rem' }}></i></Link>
+    <Link className='link' to="https://www.linkedin.com/company/chevinbags/mycompany/?viewAsMember=true"> <i className="pi pi-linkedin" style={{ fontSize: '3rem' }}></i></Link>
+        {/* <div><Link><img className="facebook" src="/images/facebook_logo.png" alt=" logo" /></Link></div>
+        <div ><Link><img className="insta" src="/images/insta_logo.png" alt=" logo" /></Link></div>
+        <div ><Link><img className="linkedin" src="/images/linkedin_logo.jpg" alt=" logo" /></Link></div> */}
       </div>
     </div>
     <div className="footer2">

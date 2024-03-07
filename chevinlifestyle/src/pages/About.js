@@ -8,8 +8,9 @@ const About =()=>{
             <h1 >About us</h1>
            </div>
            <div className="aboutus1">
-                <div className="aboutus1img">
-                <img src="/images/about1.jpg" alt="bag"/>
+                <div >
+                <img  className="aboutus2img" src="/images/about2.png" alt="bag"/>
+               
                 </div>
                 <div className="aboutus1info">
                     <h1>About Chevin</h1>
@@ -21,14 +22,15 @@ const About =()=>{
            <div className="aboutus2">
                 
                 <div className="aboutus2info">
-              <h4>  <p>Chevin is more than just trendy designs; it’s a commitment to quality. We’re dedicated to delivering products that are not only fashionable but also durable and reliable</p>
-<p>Proudly a part of Noventa Lifestyle, we carry forward the legacy of quality and excellence that defines our brand.</p>
+              <h4> Chevin is more than just trendy designs; it’s a commitment to quality. We’re dedicated to delivering products that are not only fashionable but also durable and reliable<br/>
+Proudly a part of Noventa Lifestyle, we carry forward the legacy of quality and excellence that defines our brand.
 
-<p>Discover the ideal balance of style and functionality with Chevin – because life’s journey is meant to be travelled in styl</p>
+Discover the ideal balance of style and functionality with Chevin – because life’s journey is meant to be travelled in styl
              </h4>
                 </div>
-                <div className="aboutus2img">
-                <img src="/images/about2.png" alt="bag"/>
+                <div >
+               
+                <img className="aboutus1img"src="/images/about1.jpg" alt="bag"/>
                 </div>
 
            </div>
