@@ -149,11 +149,11 @@ const Home=()=>{
          <div>
 
          </div>
-            
-        </div>
-        <div className="about-chevin">
+         {/* <div className="about-chevin"> */}
           <Aboutchevin/>
+        {/* </div> */}
         </div>
+        
         </Layout>
     )
 }
