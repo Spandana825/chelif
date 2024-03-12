@@ -4,7 +4,20 @@ import { NavLink } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { useAuth } from '../../context/auth';
+import { HiLogout } from "react-icons/hi";
+import toast from 'react-hot-toast';
 const Header = () => {
+  const [auth,setAuth]=useAuth();
+  const handleLogout=()=>{
+    setAuth({
+      ...auth,
+      user:null,
+      token:"",
+    });
+    localStorage.removeItem("auth");
+    toast.success(" Account Logout successfully")
+  }
   return (
     <div className="header">
     <div className="header-1">
@@ -29,9 +42,16 @@ const Header = () => {
     <Link className="navbar-brand" to="/">
     <FaShoppingCart />
     </Link>
-    <Link className="navbar-brand" to="/register">
-     <FaUser/>
-    </Link>
+    {!auth.user?(
+      <Link  className="navbar-brand" to="/register">
+      <FaUser/>
+     </Link>
+    ):(
+      <Link  onClick={handleLogout} className="navbar-brand" to="/register">
+      <HiLogout />
+     </Link>
+    )}
+    
     <Link className="navbar-brand" to="/">
      <FaHeart/>
     </Link>

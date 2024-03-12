@@ -9,6 +9,7 @@ import New from './pages/New';
 import Register from './pages/Auth/Register';
 import Login from './pages/Auth/Login';
 import Careers from './pages/Careers';
+import Dashboard from './pages/user/Dashboard';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/newarrivals" element={<New/>}/>
       <Route path="/*" element={<PagenotFound/>}/>
-     
+      <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
 
    

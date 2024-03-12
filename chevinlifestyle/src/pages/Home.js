@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import Carousal from "./Carousal";
 import Aboutchevin from "./Aboutchevin";
-
+import { useAuth } from "../context/auth";
  
 const Home=()=>{
+  const [auth,setAuth]=useAuth();
     return(
         <Layout title={"Chevin Lifetsyle"}>
+          <pre>{JSON.stringify(auth,null,4)}</pre>
         <div className="img-carousal">
           <Carousal/>
             {/* <div className="image1">

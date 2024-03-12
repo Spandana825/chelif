@@ -6,8 +6,9 @@ const connectDB = async ()=>{
     console.log(`connectd to mongofb ${conn.connection.host}`);
  }
  catch(error){
-    console.log(`error message ${error}`.bgRed.white)
+    console.log(`error message ${error}`)
 
  }
 }
 export default connectDB;
+

@@ -30,7 +30,7 @@ const Contact = () => {
 
           <div className="maps">
    
-          <iframe title=" loaction" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8649798656247!2d77.50569057507548!3d12.916398387393894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f645e637239%3A0xfe4354dd75c1fe8e!2sNoventa%20Lifestyle%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1708515888019!5m2!1sen!2sin" width="600" height="450"  allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe title=" loaction" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8649798656247!2d77.50569057507548!3d12.916398387393894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f645e637239%3A0xfe4354dd75c1fe8e!2sNoventa%20Lifestyle%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1708515888019!5m2!1sen!2sin" width="600" height="450"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
     </div>
     </Layout>
