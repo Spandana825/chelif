@@ -1,5 +1,5 @@
 import express from "express";
-import {registerController,loginController,testController} from "../controller/authController.js";
+import {registerController,loginController,testController,forgotPasswordController} from "../controller/authController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
 //router object
 const router =express.Router();
@@ -8,6 +8,9 @@ const router =express.Router();
 router.post('/register',registerController);
 //LOGIN
 router.post('/login',loginController);
+//forgot password,mrthod=post
+router.post('/forgot-password',forgotPasswordController)
+
 //test routr
 router.get('/test',requireSignIn,isAdmin,testController);
 //procted route auth

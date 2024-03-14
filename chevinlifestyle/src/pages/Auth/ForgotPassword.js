@@ -1,31 +1,26 @@
-import React,{useState} from 'react'
-import Layout from '../../components/Layout/Layout'
+import React,{useState} from "react";
+import Layout from "../../components/Layout/Layout";
 import axios from 'axios'
-import {useNavigate,useLocation} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast';
-import { useAuth } from '../../context/auth';
-import { Link } from 'react-router-dom';
-const Login = () => {
-   
+
+const ForgotPassword=()=>{
+     
     const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
-    const [auth,setAuth]=useAuth();
+    const [newPassword,setNewPassword]=useState("")
+    const [answer,setAnswer]=useState("")
+  
 
     const navigate=useNavigate();
-    const location=useLocation();
+   
     const handleSubmit= async (e)=>{
        e.preventDefault()
        try{
-         const res= await axios.post('/api/v1/auth/login',{email,password});
+         const res= await axios.post('/api/v1/auth/forgot-password',{email,newPassword,answer});
          if(res && res.data.success){
-          toast.success(res.data.message);
-          setAuth({
-            ...auth,
-            user:res.data.user,
-            token:res.data.token
-          });
-          localStorage.setItem('auth', JSON.stringify(res.data));
-          navigate(location.state||"/")
+         
+         
+          navigate("/login")
          }
          else{
           toast.error(res.data.message)
@@ -34,13 +29,13 @@ const Login = () => {
        }
        catch(e){
         console.log(e)
-        toast.error("something went wrong, please check your email and password")
+        toast.error("something went wrong, please check your email and answer")
        }
     };
-    console.log(process.env.REACT_APP_API)
-  return (
-    <Layout title={"Register-Chevin lifestyle"}>
-    <h1 className='register-now' >Login page</h1>
+    return(
+        <>
+        <Layout>
+        <h1 className='register-now' >Reset Password</h1>
     <div className='register'>
     
     <div className='register-box'>
@@ -63,15 +58,29 @@ const Login = () => {
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">
-      Password
+       New Password
     </label>
     <input
       type="password"
-      value={password}
-      onChange={(e)=>setPassword(e.target.value)}
+      value={newPassword}
+      onChange={(e)=>setNewPassword(e.target.value)}
       className="form-control"
       id="exampleInputPassword1"
       placeholder='enter your password'
+      required
+    />
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">
+    Favorite color
+    </label>
+    <input
+      type="text"
+      value={answer}
+      onChange={(e)=>setAnswer(e.target.value)}
+      className="form-control"
+      id="exampleInputPassword1"
+      placeholder='enter your Favorite color'
       required
     />
   </div>
@@ -82,13 +91,13 @@ const Login = () => {
     Login
   </button>
 </form>
-<h4 className='already-a-user'>Forgot password? <span><Link className="login-here"to="/forgot-password">Reset password</Link></span></h4>
+
 </div>
     </div>
     
-     
-   </Layout>
-  )
+          </Layout>
+        </>
+        
+    )
 }
-
-export default Login;
+export default ForgotPassword;

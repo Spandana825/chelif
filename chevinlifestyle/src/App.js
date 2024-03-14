@@ -11,6 +11,7 @@ import Login from './pages/Auth/Login';
 import Careers from './pages/Careers';
 import Dashboard from './pages/user/Dashboard';
 import PrivateRoute from './components/Routes/Private';
+import ForgotPassword from './pages/Auth/ForgotPassword';
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>}>
         <Route path='' element={<Dashboard/>}/>
-        </Route>
+      </Route>
+      <Route path='/forgot-password' element={<ForgotPassword/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/newarrivals" element={<New/>}/>
       <Route path="/*" element={<PagenotFound/>}/>

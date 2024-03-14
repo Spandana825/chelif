@@ -4,7 +4,7 @@ import JWT from "jsonwebtoken";
 
 export const registerController=async (req,res)=>{
     try{
-     const {name,email,password,phone}=req.body
+     const {name,email,password,phone,answer}=req.body
      //validations
      if(!name){
         return res.send({message:'NAME IS REQUIRED'})
@@ -18,7 +18,9 @@ export const registerController=async (req,res)=>{
      if(!phone){
         return res.send({message:'PHONE NUMBER IS REQUIRED'})
      }
-    
+     if(!answer){
+        return res.send({message:'ANSWER  IS REQUIRED'})
+     }
      //CHECK user
      const existingUser=await userModel.findOne({email})
      //existing user
@@ -31,7 +33,7 @@ export const registerController=async (req,res)=>{
      //register user
      const hashedPassword=await hashPassword(password)
     //save
-    const user= await new userModel({name,email,password:hashedPassword,phone}).save()
+    const user= await new userModel({name,email,password:hashedPassword,phone,answer}).save()
     res.status(201).send({
         success:true,
         message:'registred succesfully',
@@ -99,6 +101,45 @@ export const loginController= async(req,res)=>{
     }
 
 }
+//forgotPasswordController
+export const forgotPasswordController= async(req,res)=>{
+    try{
+       const {email,answer,newPassword}=req.body
+       if(!email){
+        res.send(400).send({message:"email is requires"})
+       }
+       if(!answer){
+        res.send(400).send({message:"answer is requires"})
+       }
+       if(!newPassword){
+        res.send(400).send({message:"new Password is requires"})
+       }
+       //check
+       const user=await userModel.findOne({email,answer})
+       //validation
+       if(!user){
+        return res.send.status(404).send({
+            success:false,
+            message:'wrong email or answer'
+        })
+       }
+       const hashed=await hashPassword(newPassword)
+       await userModel.findByIdAndUpdate(user._id,{password:hashed});
+       res.status(200).send({
+        success:true,
+        message:"password reset successfully",
+       });
+       
+    }
+    catch(e){
+        console.log(e)
+        res.status(500).send({
+            success:false,
+            message:"something went wrong",
+            e
+        })
+    }
+};
 //testcontroler
 export const testController= (req,res)=>{
 res.send("protectd route");

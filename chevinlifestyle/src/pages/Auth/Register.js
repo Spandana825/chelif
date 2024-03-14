@@ -9,12 +9,12 @@ const Register = () => {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     const [phone,setPhone]=useState("")
-    
+    const [answer,setAnswer]=useState("")
     const navigate=useNavigate();
     const handleSubmit= async (e)=>{
        e.preventDefault()
        try{
-         const res= await axios.post('/api/v1/auth/register',{name,email,password,phone});
+         const res= await axios.post('/api/v1/auth/register',{name,email,password,phone,answer});
          if(res && res.data.success){
           toast.success(res.data.message)
           navigate("/login")
@@ -92,6 +92,21 @@ const Register = () => {
       className="form-control"
       id="exampleInputEmail1"
       placeholder='enter your mobile number'
+      required
+      />
+    
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputName" className="form-label">
+      Security Question
+    </label>
+    <input
+      type="text"
+      value={answer}
+      onChange={(e)=>setAnswer(e.target.value)}
+      className="form-control"
+      id="exampleInputEmail1"
+      placeholder='what is your favorite color'
       required
       />
     
