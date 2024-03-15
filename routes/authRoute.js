@@ -13,8 +13,12 @@ router.post('/forgot-password',forgotPasswordController)
 
 //test routr
 router.get('/test',requireSignIn,isAdmin,testController);
-//procted route auth
+//procted  user route auth
 router.get('/user-auth',requireSignIn,(req,res)=>{
+    res.status(200).send({ok:true});
+});
+//procted  admin route auth
+router.get('/admin-auth',requireSignIn,isAdmin,(req,res)=>{
     res.status(200).send({ok:true});
 });
 export default router;

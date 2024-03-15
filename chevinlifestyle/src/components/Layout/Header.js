@@ -6,6 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { useAuth } from '../../context/auth';
 import { HiLogout } from "react-icons/hi";
+import { FaHouseUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
 const Header = () => {
   const [auth,setAuth]=useAuth();
@@ -42,19 +43,31 @@ const Header = () => {
     <Link className="navbar-brand" to="/">
     <FaShoppingCart />
     </Link>
+    <Link className="navbar-brand" to="/">
+     <FaHeart/>
+    </Link>
     {!auth.user?(
       <Link  className="navbar-brand" to="/register">
       <FaUser/>
      </Link>
     ):(
+      <>
       <Link  onClick={handleLogout} className="navbar-brand" to="/register">
       <HiLogout />
      </Link>
+     <Link  className="navbar-brand" 
+     to={`/dashboard/${
+                auth?.user?.role===1 ?"admin":"user"
+     }`}>
+      <FaHouseUser />
+      </Link>
+      <h4 className='heyuser'>Hi, {auth?.user?.name}</h4>
+     </>
     )}
+  
     
-    <Link className="navbar-brand" to="/">
-     <FaHeart/>
-    </Link>
+    
+   
     <button
       className="navbar-toggler"
       type="button"

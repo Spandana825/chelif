@@ -12,6 +12,8 @@ import Careers from './pages/Careers';
 import Dashboard from './pages/user/Dashboard';
 import PrivateRoute from './components/Routes/Private';
 import ForgotPassword from './pages/Auth/ForgotPassword';
+import AdminRoute from './components/Routes/AdminRoute';
+import Admindashboard from './pages/Admin/Admindashboard';
 
 
 function App() {
@@ -24,13 +26,16 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>}>
-        <Route path='' element={<Dashboard/>}/>
+        <Route path='user' element={<Dashboard/>}/>
+      </Route>
+      <Route path='/dashboard' element={<AdminRoute/>}>
+        <Route path='admin' element={<Admindashboard/>}/>
       </Route>
       <Route path='/forgot-password' element={<ForgotPassword/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/newarrivals" element={<New/>}/>
       <Route path="/*" element={<PagenotFound/>}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
+     
     </Routes>
 
    

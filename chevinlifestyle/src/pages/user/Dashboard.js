@@ -3,11 +3,11 @@ import Layout from '../../components/Layout/Layout'
 
 const Dashboard = () => {
   return (
-    <div>
+    
       <Layout>
-        <h1>Dashboard</h1>
+        <h1> user Dashboard</h1>
       </Layout>
-    </div>
+    
   )
 }
 
