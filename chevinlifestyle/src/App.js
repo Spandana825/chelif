@@ -14,6 +14,9 @@ import PrivateRoute from './components/Routes/Private';
 import ForgotPassword from './pages/Auth/ForgotPassword';
 import AdminRoute from './components/Routes/AdminRoute';
 import Admindashboard from './pages/Admin/Admindashboard';
+import CreateCategory from './pages/Admin/CreateCategory';
+import CreateProduct from './pages/Admin/CreateProduct';
+import Users from './pages/Admin/Users';
 
 
 function App() {
@@ -30,11 +33,16 @@ function App() {
       </Route>
       <Route path='/dashboard' element={<AdminRoute/>}>
         <Route path='admin' element={<Admindashboard/>}/>
+        <Route path="admin/create-category" element={<CreateCategory/>}/>
+        <Route path="admin/create-product" element={<CreateProduct/>}/>
+        <Route  path="admin/users" element={<Users/>}/>
       </Route>
       <Route path='/forgot-password' element={<ForgotPassword/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/newarrivals" element={<New/>}/>
+      
       <Route path="/*" element={<PagenotFound/>}/>
+
      
     </Routes>
 

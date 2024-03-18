@@ -61,7 +61,7 @@ const Header = () => {
      }`}>
       <FaHouseUser />
       </Link>
-      <h4 className='heyuser'>Hi, {auth?.user?.name}</h4>
+      <h4 className='heyuser'>Hi {auth?.user?.name},</h4>
      </>
     )}
   

@@ -1,11 +1,12 @@
 import React from 'react'
 import Layout from '../../components/Layout/Layout'
+import UserMenu from '../../components/Layout/UserMenu'
 
 const Dashboard = () => {
   return (
     
       <Layout>
-        <h1> user Dashboard</h1>
+        <UserMenu/>
       </Layout>
     
   )
