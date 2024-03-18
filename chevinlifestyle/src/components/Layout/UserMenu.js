@@ -31,7 +31,7 @@ const UserMenu = () =>{
 
         <div className='user-dashboard-item'>
                 <div className="user-dashboard-item1">
-                    <NavLink to="/"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
+                    <NavLink to="/dashboard/user/shop"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
                         <div>
                         <FaBasketShopping />
                         </div>
@@ -39,7 +39,7 @@ const UserMenu = () =>{
                     </NavLink> 
                 </div>
                 <div className="user-dashboard-item2">
-                    <NavLink to="/" className="active-dashboard">
+                    <NavLink to="/dashboard/user/shop" className="active-dashboard">
                         <h3 className='active-dashboard'>Shop</h3>
                     </NavLink> 
                     <h6>Enter Shop</h6>
@@ -49,7 +49,7 @@ const UserMenu = () =>{
         
         <div className='user-dashboard-item'>
             <div className="user-dashboard-item1">
-                <NavLink to="/"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
+                <NavLink to="/dashboard/user/wishlist"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
                     <div>
                     <FaHeart />
                     </div>
@@ -57,7 +57,7 @@ const UserMenu = () =>{
                 </NavLink> 
             </div>
             <div className="user-dashboard-item2">
-                 <NavLink to="/" className="active-dashboard">
+                 <NavLink to="/dashboard/user/wishlist" className="active-dashboard">
                        <h3 className='active-dashboard'>Wishlist</h3>
                  </NavLink> 
                  <h6>Favorite Items</h6>
@@ -65,7 +65,7 @@ const UserMenu = () =>{
         </div>
         <div className='user-dashboard-item'>
             <div className="user-dashboard-item1">
-                <NavLink to="/"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
+                <NavLink to="/dashboard/user/addresses"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
                     <div>
                     <FaHome />
                     </div>
@@ -73,7 +73,7 @@ const UserMenu = () =>{
                 </NavLink> 
             </div>
             <div className="user-dashboard-item2">
-                 <NavLink to="/" className="active-dashboard">
+                 <NavLink to="/dashboard/user/addressses" className="active-dashboard">
                        <h3 className='active-dashboard'>Addresses</h3>
                  </NavLink> 
                  <h6>saved addresses</h6>
@@ -81,7 +81,7 @@ const UserMenu = () =>{
         </div>
         <div className='user-dashboard-item'>
             <div className="user-dashboard-item1">
-                <NavLink to="/"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
+                <NavLink to="/dashboard/user/edit-profile"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
                     <div>
                     <FaUserEdit />
                     </div>
@@ -89,7 +89,7 @@ const UserMenu = () =>{
                 </NavLink> 
             </div>
             <div className="user-dashboard-item2">
-                 <NavLink to="/" className="active-dashboard">
+                 <NavLink to="/dashboard/user/edit-profile" className="active-dashboard">
                        <h3 className='active-dashboard'> Profile</h3>
                  </NavLink> 
                  <h6>Edit your Profile</h6>
@@ -97,7 +97,7 @@ const UserMenu = () =>{
         </div>
         <div className='user-dashboard-item'>
             <div className="user-dashboard-item1">
-                <NavLink to="/"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
+                <NavLink to="/dashboard/user/orders"><IconContext.Provider value={{ color: "black", size:"60px", className: "global-class-name" }}>
                     <div>
                     <FaBoxOpen />
                     </div>
@@ -105,7 +105,7 @@ const UserMenu = () =>{
                 </NavLink> 
             </div>
             <div className="user-dashboard-item2">
-                 <NavLink to="/" className="active-dashboard">
+                 <NavLink to="/dashboard/user/orders" className="active-dashboard">
                        <h3 className='active-dashboard'>Orders</h3>
                  </NavLink> 
                  <h6>Your Orders</h6>

@@ -8,16 +8,16 @@ const AdminMenu=()=>{
             
 <div className="list-group">
   <NavLink
-    to="/dashboard/admin/create-category" className="list-group-item" activeClassName="active">
+    to="/dashboard/admin/create-category" className="list-group-item" activeclassname="active">
     Create Category
   </NavLink>
-  <NavLink to="/dashboard/admin/create-product" className="list-group-item  " activeClassName="active">
+  <NavLink to="/dashboard/admin/create-product" className="list-group-item  " activeclassname="active">
     Create product
   </NavLink>
-  <NavLink to="/dashboard/admin/users" className="list-group-item " activeClassName="active">
+  <NavLink to="/dashboard/admin/users" className="list-group-item " activeclassname="active">
     Users
   </NavLink>
-  <NavLink to="/" className="list-group-item " activeClassName="active">
+  <NavLink to="/" className="list-group-item " activeclassname="active">
     A fourth link item
   </NavLink>
   

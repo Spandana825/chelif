@@ -17,6 +17,11 @@ import Admindashboard from './pages/Admin/Admindashboard';
 import CreateCategory from './pages/Admin/CreateCategory';
 import CreateProduct from './pages/Admin/CreateProduct';
 import Users from './pages/Admin/Users';
+import EditProfile from './pages/user/EditProfile';
+import Orders from './pages/user/Orders';
+import Shop from './pages/user/Shop';
+import Addresses from './pages/user/Addresses';
+import Wishlist from './pages/user/Wishlist';
 
 
 function App() {
@@ -30,6 +35,11 @@ function App() {
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>}>
         <Route path='user' element={<Dashboard/>}/>
+        <Route path='user/edit-profile' element={<EditProfile/>}/>
+        <Route path='user/wishlist' element={<Wishlist/>}/>
+        <Route path='user/addresses' element={<Addresses/>}/>
+        <Route path='user/shop' element={<Shop/>}/>
+        <Route path='user/orders' element={<Orders/>}/>
       </Route>
       <Route path='/dashboard' element={<AdminRoute/>}>
         <Route path='admin' element={<Admindashboard/>}/>
