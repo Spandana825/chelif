@@ -20,7 +20,7 @@ export const isAdmin= async(req,res,next)=>{
             return res.status(401).send({
                 success:false,
                 message:"unAuthorised Access"
-            })
+            });
          } else {
                 next();
          }
@@ -31,7 +31,7 @@ export const isAdmin= async(req,res,next)=>{
             success:false,
             error,
             message:"error in admin middleware"
-        })
+        });
     }
 
-}
+};
