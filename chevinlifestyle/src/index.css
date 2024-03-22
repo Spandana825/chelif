@@ -492,6 +492,11 @@ display: flex;
 .btn{
   background-color: black;
   border: none;
+
+}
+.btn:hover{
+  background-color: rgb(113, 110, 110);
+  
 }
 .login-here{
   color: black;
