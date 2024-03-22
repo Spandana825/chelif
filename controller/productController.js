@@ -19,8 +19,7 @@ export const createProductController=async(req,res)=>{
                 return res.status(500).send({error:'discount is required'})
             case !category:
                 return res.status(500).send({error:'category is required'})
-            case !quantity:
-                return res.status(500).send({error:'qunatity is required'})
+           
             case photo && photo.size>1000000:
                 return res.status(500).send({error:'photo is required'})
            

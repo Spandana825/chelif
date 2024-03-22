@@ -22,6 +22,7 @@ import Orders from './pages/user/Orders';
 import Shop from './pages/user/Shop';
 import Addresses from './pages/user/Addresses';
 import Wishlist from './pages/user/Wishlist';
+import Products from './pages/Admin/Products';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path='admin' element={<Admindashboard/>}/>
         <Route path="admin/create-category" element={<CreateCategory/>}/>
         <Route path="admin/create-product" element={<CreateProduct/>}/>
+        <Route path="admin/products" element={<Products/>}/>
         <Route  path="admin/users" element={<Users/>}/>
       </Route>
       <Route path='/forgot-password' element={<ForgotPassword/>}/>

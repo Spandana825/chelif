@@ -34,7 +34,9 @@ const CreateCategory=()=>{
     const getAllCategories=async()=>{
         try{
            const {data}=await axios.get('/api/v1/category/get-category');
-           setCategories(data.category);
+           if(data?.success){
+           setCategories(data?.category);
+           }
         }
         catch(error){
            console.log(error)
@@ -100,6 +102,7 @@ const CreateCategory=()=>{
                     <br/>
                     <br/>
                     </>
+                    <h4>Existing Categories</h4>
                     <div className='w-75'>
                     <table className="table">
                         <thead>
