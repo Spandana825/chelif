@@ -607,3 +607,21 @@ padding-right: 20px;
 .user-dashboard-item2 h6{
   color: rgb(117, 109, 109);
 }
+.strike{
+  color: gray;
+  font-weight: 600;
+}
+.price{
+  color: black;
+  font-weight: 700;
+}
+.discount{
+  color: red;
+  font-weight:500
+}
+.product-link{
+  text-decoration: none !important;
+}
+.btn.btn-primary.addtocart{
+  border-radius: 20px;
+}

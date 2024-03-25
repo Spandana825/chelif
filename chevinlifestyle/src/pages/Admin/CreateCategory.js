@@ -141,7 +141,7 @@ const CreateCategory=()=>{
                     </div>
                 </div>
             </div>
-            
+
         </Layout>
        
     )
