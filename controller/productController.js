@@ -158,7 +158,7 @@ export const deleteProductController=async(req,res)=>{
 //update controller
 export const updateProductController=async(req,res)=>{
         try{
-            const {name,slug,description,original_price,selling_price,discount,category,quantity,shipping}=req.fields
+            const {name,description,original_price,selling_price,discount,category,quantity}=req.fields
             const {photo}=req.files; 
             //validation
             switch(true){
@@ -174,8 +174,7 @@ export const updateProductController=async(req,res)=>{
                     return res.status(500).send({error:'discount is required'})
                 case !category:
                     return res.status(500).send({error:'category is required'})
-                case !quantity:
-                    return res.status(500).send({error:'qunatity is required'})
+               
                 case photo && photo.size>1000000:
                     return res.status(500).send({error:'photo is required'})
                

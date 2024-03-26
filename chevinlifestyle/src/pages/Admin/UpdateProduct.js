@@ -30,7 +30,7 @@ const UpdateProduct = () => {
    setSelling_price(data.product.selling_price)
    setDiscount(data.product.discount)
    setCategory(data.product.category._id)
-   setName(data.product.name)
+   
   }
   catch(error){
     console.log(error)
@@ -38,6 +38,7 @@ const UpdateProduct = () => {
   };
   useEffect(()=>{
   getSingleProduct();
+  //eslint-disable-next-line
   },[])
   //get al cats
   const getAllCategories=async()=>{
@@ -49,7 +50,7 @@ const UpdateProduct = () => {
     }
     catch(error){
        console.log(error)
-       toast.error("somrthing went wronmg in getting categories")
+       toast.error("something went wronmg in getting categories")
        
        }
     };
@@ -59,7 +60,7 @@ const UpdateProduct = () => {
         getAllCategories();
     },[]);
     //create product
-    const handleCreate=async(e)=>{
+    const handleUpdate=async(e)=>{
         e.preventDefault()
         try{
             const productData=new FormData()
@@ -71,13 +72,13 @@ const UpdateProduct = () => {
             productData.append("discount",discount)
             productData.append("category",category)
             photo && productData.append("photo",photo)
-            const {data}=axios.post('/api/v1/product/create-product',productData)
+            const {data}=axios.put(`/api/v1/product/update-product/${id}`,productData)
             if(data?.success){
                
                 toast.error(data?.message)
             }
             else{
-                toast.success("product created successfully")
+                toast.success("product updated successfully")
                 navigate("/dashboard/admin/products")
                
             }
@@ -88,7 +89,7 @@ const UpdateProduct = () => {
         }
     }
   return (
-    <Layout title={"Dashboard-Create Product"}>
+    <Layout title={"Dashboard-update Product"}>
     <div className="container-fluid m-3 p-3">
     <div className="row">
         <div className="col-md-3">
@@ -104,7 +105,7 @@ const UpdateProduct = () => {
             </Select>
             <div className="mb-3">
                 <label  className='btn btn-outline-secondary col-md-12'>
-                    {photo ? photo.name:"upload photo"}
+                    {photo ? photo.name:"update  photo"}
                     <input type="file" name="photo" accept='image/*' onChange={(e)=>setPhoto(e.target.files[0])}hidden/>
                 </label>
             </div>
@@ -134,7 +135,7 @@ const UpdateProduct = () => {
                 <input type="number" value={discount} placeholder='enter discount value' className='form-control' onChange={(e)=>setDiscount(e.target.value)}/>
             </div>
            <div className="mb-3">
-            <button className='btn btn-primary' onClick={handleCreate}>Update product</button>
+            <button className='btn btn-primary' onClick={handleUpdate}>Update product</button>
            </div>
         </div>
         </div>
