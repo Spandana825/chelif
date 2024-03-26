@@ -46,7 +46,7 @@ const Products = () => {
                         <strike className="strike">₹{p.original_price}</strike> <span className='price'>₹{p.selling_price}</span> <span className='discount'>({p.discount}% OFF)</span>
                         </p>
                         <a href="#" className="btn btn-primary addtocart">
-                          Add to cart
+                          Manage
                         </a>
                       </div>
                     </div>

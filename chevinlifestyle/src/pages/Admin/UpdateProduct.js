@@ -88,6 +88,20 @@ const UpdateProduct = () => {
             toast.error("something went wrong in creating product")
         }
     }
+    //delete product
+    const handleDelete=async()=>{
+        try{
+            let answer=window.prompt("Do you want to delete the product permanently?");
+            if(!answer) return;
+         const {data}=await axios.delete(`/api/v1/product/delete-product/${id}`)
+         toast.success("product deleted successfully")
+         navigate('/dashboard/admin/products')
+        }
+        catch(error){
+            console.log(error)
+            toast.error("error in deleting product")
+        }
+    }
   return (
     <Layout title={"Dashboard-update Product"}>
     <div className="container-fluid m-3 p-3">
@@ -135,7 +149,8 @@ const UpdateProduct = () => {
                 <input type="number" value={discount} placeholder='enter discount value' className='form-control' onChange={(e)=>setDiscount(e.target.value)}/>
             </div>
            <div className="mb-3">
-            <button className='btn btn-primary' onClick={handleUpdate}>Update product</button>
+            <button className='btn btn-primary m-5' onClick={handleUpdate}>Update product</button>
+            <button className='btn btn-primary' onClick={handleDelete}>Delete product</button>
            </div>
         </div>
         </div>
