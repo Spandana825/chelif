@@ -625,3 +625,6 @@ padding-right: 20px;
 .btn.btn-primary.addtocart{
   border-radius: 20px;
 }
+.ant-checkbox {
+  margin: 10px;
+}
