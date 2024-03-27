@@ -626,5 +626,13 @@ padding-right: 20px;
   border-radius: 20px;
 }
 .ant-checkbox {
-  margin: 10px;
+  margin-left: 70px;
+}
+.ant-radio-group{
+  margin-left: 70px;
+}
+.btn.btn-primary.reset{
+  width: 80px;
+  margin-left:90px;
+  margin-top: 20px;
 }

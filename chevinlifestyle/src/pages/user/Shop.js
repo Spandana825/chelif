@@ -71,7 +71,7 @@ const Shop = () => {
     <Layout title={"Dashboard-Shop"}>
      <div className="row mt-3">
       <div className="col-md-3">
-        <h4 className="text-center">Filter by Category</h4>
+        <h4 className="text-center mt-4 ">Filter by Category</h4>
         <div className="d-flex flex-column ">
         {categories?.map(c=>(
           <Checkbox  key={c._id} onChange={(e)=>handleFilter(e.target.checked,c._id)}>
@@ -93,9 +93,12 @@ const Shop = () => {
          </Radio.Group>
         
          </div>
+         <div className='d-flex flex-column'>
+          <button className='btn btn-primary reset' onClick={()=>window.location.reload()}>Reset</button>
+         </div>
       </div>
       <div className="col-md-9">
-        {JSON.stringify(radio,null,4)}
+        {/* {JSON.stringify(radio,null,4)} */}
         <h1 className='text-center'>all products</h1>
         <div className="d-flex flex-wrap">
         {products?.map(p=>(
