@@ -11,6 +11,10 @@ const Shop = () => {
   const [categories,setCategories]=useState([]);
   const [checked,setChecked]=useState([]);
   const [radio,setRadio]=useState([]);
+  const [total,setTotal]=useState(0)
+  const [page,setPage]=useState(1)
+  const [loading,setLoading]=useState(false)
+
   //get all categories
   const getAllCategories=async()=>{
     try{
@@ -26,18 +30,49 @@ const Shop = () => {
   }
   useEffect(()=>{
     getAllCategories();
+    getTotal();
   },[])
   //get all produxts
   const getAllProducts=async()=>{
     try{
-      const {data}=await axios.get("/api/v1/product/get-products");
+      setLoading(true);
+      const {data}=await axios.get(`/api/v1/product/product-list/${page}`);
+      setLoading(false)
       setProducts(data.products);
     }
     catch(error){
+      setLoading(false);
       console.log(error)
     }
   }
   
+  //get total count
+const getTotal=async()=>{
+  try{
+   const {data}=await axios.get('/api/v1/product/product-count')
+   setTotal(data?.total)
+  }
+  catch(error){
+  console.log(error)
+  }
+} 
+useEffect(()=>{
+  if(page===1)return;
+  loadMore();
+},[page]);
+//load more
+const loadMore=async()=>{
+  try{
+    setLoading(true)
+  const {data}=await axios.get(`/api/v1/product/product-list/${page}`)
+  setLoading(false)
+  setProducts([...products,...data?.products])
+  }
+  catch(error){
+    setLoading(false)
+  }
+}
+
   //filter by categories
   const handleFilter=async(value,id)=>{
     let all=[...checked]
@@ -117,6 +152,17 @@ const Shop = () => {
                     </div>
                     
                     ))}
+        </div>
+        <div className='m-2 p-3'>
+          {products && products.length <total &&(
+            <button className='btn btn-primary'
+            onClick={(e)=>{
+              e.preventDefault();
+              setPage(page +1);
+            }}>
+              {loading?"loading...":"Loadmore"}
+            </button>
+          )}
         </div>
       </div>
      </div>
