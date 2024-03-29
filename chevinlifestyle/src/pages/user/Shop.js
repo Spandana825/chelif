@@ -6,6 +6,8 @@ import axios from 'axios';
 import {Checkbox} from 'antd'
 import { Prices } from '../../components/Prices.js';
 import {Radio} from "antd"
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Shop = () => {
   const [products,setProducts]=useState([]);
   const [categories,setCategories]=useState([]);
@@ -14,6 +16,7 @@ const Shop = () => {
   const [total,setTotal]=useState(0)
   const [page,setPage]=useState(1)
   const [loading,setLoading]=useState(false)
+  const navigate=useNavigate()
 
   //get all categories
   const getAllCategories=async()=>{
@@ -135,15 +138,16 @@ const loadMore=async()=>{
       <div className="col-md-9">
         {/* {JSON.stringify(radio,null,4)} */}
         <h1 className='text-center'>all products</h1>
+        
         <div className="d-flex flex-wrap">
         {products?.map(p=>(
                     
                       <div className="card m-2" style={{ width: "16rem" }} key={p._id}> 
-                      <img src={`/api/v1/product/get-product-photo/${p._id}`} className="card-img-top" alt={p.name} />
-                      <div className="card-body">
-                        <h5 className="card-title">{p.name}</h5>
+                      <img src={`/api/v1/product/get-product-photo/${p._id}`} className="card-img-top" alt={p.name} onClick={()=>navigate(`/product/${p.slug}`)}/>
+                      <div className="card-body" onClick={()=>navigate(`/product/${p.slug}`)}>
+                        <h5 className="card-title" onClick={()=>navigate(`/product/${p.slug}`)}>{p.name}</h5>
                         <p className="card-text">
-                        <strike className="strike">₹{p.original_price}</strike> <span className='price'>₹{p.selling_price}</span> <span className='discount'>({p.discount}% OFF)</span>
+                        <strike className="strike" >₹{p.original_price}</strike> <span className='price'>₹{p.selling_price}</span> <span className='discount'>({p.discount}% OFF)</span>
                         </p>
                         <a href="#" className="btn btn-primary addtocart">
                           Add to cart
@@ -153,6 +157,7 @@ const loadMore=async()=>{
                     
                     ))}
         </div>
+       
         <div className='m-2 p-3'>
           {products && products.length <total &&(
             <button className='btn btn-primary'

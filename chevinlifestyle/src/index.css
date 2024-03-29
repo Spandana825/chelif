@@ -492,6 +492,7 @@ display: flex;
 .btn{
   background-color: black;
   border: none;
+  color: white;
 
 }
 .btn:hover{
@@ -617,7 +618,8 @@ padding-right: 20px;
 }
 .discount{
   color: red;
-  font-weight:500
+  font-weight:500;
+  font-size:medium;
 }
 .product-link{
   text-decoration: none !important;
@@ -635,4 +637,26 @@ padding-right: 20px;
   width: 80px;
   margin-left:90px;
   margin-top: 20px;
+}
+
+.form-control.search{
+  height: 35px;
+  align-items: center;
+  width: 450px;
+}
+
+.btn.btn-outline-success.search{
+  height: 35px;
+  margin-right: 80px;
+  
+  
+}
+.clickproduct{
+  text-decoration: none;
+}
+.card-img-top{
+  cursor: pointer;
+}
+.card-title{
+  cursor: pointer;
 }

@@ -8,6 +8,7 @@ import { useAuth } from '../../context/auth';
 import { HiLogout } from "react-icons/hi";
 import { FaHouseUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
+import SearchInput from '../Form/SearchInput';
 const Header = () => {
   const [auth,setAuth]=useAuth();
   const handleLogout=()=>{
@@ -81,6 +82,9 @@ const Header = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li className="nav-item">
+          <SearchInput/>
+        </li>
         <li className="nav-item">
           <NavLink className="nav-link active" aria-current="page" to="/">
             Home

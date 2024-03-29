@@ -24,6 +24,8 @@ import Addresses from './pages/user/Addresses';
 import Wishlist from './pages/user/Wishlist';
 import Products from './pages/Admin/Products';
 import UpdateProduct from './pages/Admin/UpdateProduct';
+import Search from './pages/Search';
+import ProductDetail from './pages/ProductDetail';
 
 
 function App() {
@@ -31,11 +33,14 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/product/:slug" element={<ProductDetail/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/careers' element={<Careers/>}/>
+       <Route path='/search' element={<Search/>}/> 
       <Route path='/dashboard' element={<PrivateRoute/>}>
+      
         <Route path='user' element={<Dashboard/>}/>
         <Route path='user/edit-profile' element={<EditProfile/>}/>
         <Route path='user/wishlist' element={<Wishlist/>}/>
