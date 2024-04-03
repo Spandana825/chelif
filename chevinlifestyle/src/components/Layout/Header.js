@@ -8,9 +8,11 @@ import { useAuth } from '../../context/auth';
 import { HiLogout } from "react-icons/hi";
 import { FaHouseUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
+import useCategory from '../../hooks/useCategory';
 import SearchInput from '../Form/SearchInput';
 const Header = () => {
   const [auth,setAuth]=useAuth();
+  const categories=useCategory()
   const handleLogout=()=>{
     setAuth({
       ...auth,
@@ -111,12 +113,31 @@ const Header = () => {
             Categories
           </NavLink>
           <ul className="dropdown-menu">
+            {categories?.map((c)=>(
+              <li>
+              <Link className="dropdown-item" to={`/category/${c.slug}`}>
+                {c.name}
+              </Link>
+            </li>
+
+            ))}
+          
+             <li>
+              <Link className="dropdown-item" to={`/category/$}`}>
+                School Backpacks<span style={{ color: 'red', fontSize:"13px" }}>(coming soon)</span>
+              </Link>
+            </li> 
             <li>
-              <NavLink className="dropdown-item" href="#">
-                SCHOOL BACKPACKS<span style={{ color: 'red' }}>(coming soon)</span>
-              </NavLink>
+              <Link className="dropdown-item" to={`/category/$`}>
+                Wheeled Duffle<span style={{ color: 'red', fontSize:"13px"}}>(coming soon)</span>
+              </Link>
             </li>
             <li>
+              <Link className="dropdown-item" to={`/category/$`}>
+                T-Shirts<span style={{ color: 'red' , fontSize:"13px"}}>(coming soon)</span>
+              </Link>
+            </li>
+             {/* <li>
               <NavLink className="dropdown-item" href="#">
                 CASUAL BACKPACKS
               </NavLink>
@@ -150,7 +171,7 @@ const Header = () => {
               <NavLink className="dropdown-item" href="#">
                 DAYPACKS
               </NavLink>
-            </li>
+            </li> */}
             
           </ul>
         </li>
