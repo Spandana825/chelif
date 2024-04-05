@@ -122,11 +122,11 @@ const Header = () => {
 
             ))}
           
-             <li>
+             {/* <li>
               <Link className="dropdown-item" to={`/category/$}`}>
                 School Backpacks<span style={{ color: 'red', fontSize:"13px" }}>(coming soon)</span>
               </Link>
-            </li> 
+            </li>  */}
             <li>
               <Link className="dropdown-item" to={`/category/$`}>
                 Wheeled Duffle<span style={{ color: 'red', fontSize:"13px"}}>(coming soon)</span>
@@ -187,29 +187,29 @@ const Header = () => {
           </NavLink>
           <ul className="dropdown-menu">
             <li>
-              <NavLink className="dropdown-item" href="#">
+              <Link className="dropdown-item" to={`/category/daypacks`}>
                 CHEVIN
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink className="dropdown-item" href="#">
+              <Link className="dropdown-item" to={`/category/bags-for-her`}>
                 AYS
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink className="dropdown-item" href="#">
+              <Link className="dropdown-item" to={`/category/rucksacks`}>
                 CHEVIN SPORTS
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink className="dropdown-item" href="#">
+              <Link className="dropdown-item" to={`/category/casuals`}>
               CHEVIN CASUALS
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink className="dropdown-item" href="#">
+              <Link className="dropdown-item" to={`/category/business-backpacks`}>
                 CHEVIN BUSINESS
-              </NavLink>
+              </Link>
             </li>
             
           </ul>

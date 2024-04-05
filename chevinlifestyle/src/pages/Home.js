@@ -8,7 +8,7 @@ const Home=()=>{
   const [auth,setAuth]=useAuth();
     return(
         <Layout title={"Chevin Lifetsyle"}>
-          <pre>{JSON.stringify(auth,null,4)}</pre>
+          
         <div className="img-carousal">
           <Carousal/>
             {/* <div className="image1">
@@ -100,9 +100,9 @@ const Home=()=>{
                 <h1 className="prod-explore-heading">DIVE AND EXPLORE OUR COLLECTIONS</h1>
                 <div className="prod-explore-images" >
                     <div className="prod-explore-image-container " onClick={()=>console.log("clicked")}>
-                      <img className="prod-explore-image" src="/images/backpacks.jpg" alt="duffle"/>
+                    <Link style={{color:'black',textDecoration:"none"}}to={`/category/casuals`}> <img className="prod-explore-image" src="/images/backpacks.jpg" alt="duffle"/>
                       {/* <button className="explore-now1"> →</button> */}
-                      <h2 className="prod-explore-image-heading">Backpacks</h2>
+                      <h2 className="prod-explore-image-heading">Backpacks</h2></Link>
                     </div>
                     
                     <div className="prod-explore-image-container" onClick={()=>console.log("clicked")}>
@@ -111,14 +111,14 @@ const Home=()=>{
                     <h2 className="prod-explore-image-heading">Duffle Bags</h2>
                     </div>
                     <div className="prod-explore-image-container" onClick={()=>console.log("clicked")}>
-                    <img className="prod-explore-image" src="/images/laptop.png" alt="duffle"/>
+                    <Link style={{color:'black',textDecoration:"none"}}to={`/category/business-backpacks`}><img className="prod-explore-image" src="/images/laptop.png" alt="duffle"/>
                     {/* <button className="explore-now">EXPLORE NOW →</button> */}
-                    <h2 className="prod-explore-image-heading">Laptop Bags</h2>
+                    <h2 className="prod-explore-image-heading">Laptop Bags</h2></Link>
                     </div>
                     <div className="prod-explore-image-container" onClick={()=>console.log("clicked")}>
-                    <img className="prod-explore-image" src="/images/daypacks.png" alt="duffle"/>
+                    <Link style={{color:'black',textDecoration:"none"}}to={`/category/daypacks`}><img className="prod-explore-image" src="/images/daypacks.png" alt="duffle"/>
                     {/* <button className="explore-now">EXPLORE NOW →</button> */}
-                    <h2 className="prod-explore-image-heading">Daypacks </h2>
+                    <h2 className="prod-explore-image-heading">Daypacks </h2></Link>
                     </div>
                 </div>
             </div>
@@ -126,12 +126,12 @@ const Home=()=>{
          <div className="top-selling">
        
             <div className="top-selling-prod-1-container">
-            <img className="top-selling-prod-1-image"src="/images/top-selling1.png" alt="top1" onClick={()=>console.log("clicked")}/>
+            <Link to={`/product/Charm-Red-Daypack`}><img className="top-selling-prod-1-image"src="/images/top-selling1.png" alt="top1" onClick={()=>console.log("clicked")}/></Link>
             </div>
             <div className="top-selling-prod-2-container">
             <div className="top-selling-prod-2">
                 <div>
-                    <img className="top-selling-prod-2-image1" src="/images/topselling2.jpg" alt="top2" onClick={()=>console.log("clicked")}/>
+                  <Link to={`/product/AYS-Mini-Grey`}> <img className="top-selling-prod-2-image1" src="/images/topselling2.jpg" alt="top2" onClick={()=>console.log("clicked")}/></Link> 
                 </div>
                <div><h3 className="top-selling-prod-2-info">Indulge in a fusion of culture and convenience with our AYS Mini Navy Backpack. Embrace the spirit of exploration while showcasing your style, making a statement wherever your journey takes you. </h3></div>
             </div>
@@ -140,7 +140,7 @@ const Home=()=>{
               <Link to="/*">  <button  className=" shop-now-button"onClick={()=>console.log("clicked")}>SHOP NOW</button></Link>
             </div>
             <div>
-                <img className="top-selling-prod-2-image2" src="/images/topselling3.jpg" alt="top3"onClick={()=>console.log("clicked")}/>
+               <Link to={`/product/AYS-Mini-Teal`}><img className="top-selling-prod-2-image2" src="/images/topselling3.jpg" alt="top3"onClick={()=>console.log("clicked")}/></Link> 
                 </div>
                
             </div>

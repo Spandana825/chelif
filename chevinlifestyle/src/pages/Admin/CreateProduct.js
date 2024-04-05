@@ -100,6 +100,7 @@ const CreateProduct=()=>{
                     <div className="mb-3">
                         <input type="text" value={description} placeholder='write product desciption' className='form-control' onChange={(e)=>setDescription(e.target.value)}/>
                     </div>
+                    
                     <div className="mb-3">
                         <input type="number" value={original_price} placeholder='enter original price' className='form-control' onChange={(e)=>setOriginal_price(e.target.value)}/>
                     </div>

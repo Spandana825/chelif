@@ -659,4 +659,9 @@ padding-right: 20px;
 }
 .card-title{
   cursor: pointer;
+  font-size: 18px;
+}
+Link{
+  color: black;
+  text-decoration: none;
 }
