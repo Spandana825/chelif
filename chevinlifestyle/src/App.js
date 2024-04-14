@@ -27,6 +27,7 @@ import UpdateProduct from './pages/Admin/UpdateProduct';
 import Search from './pages/Search';
 import ProductDetail from './pages/ProductDetail';
 import CategoryProduct from './pages/CategoryProduct';
+import Cart from './pages/Cart';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/product/:slug" element={<ProductDetail/>}/>
+      <Route path="/cart" element={<Cart/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/category/:slug" element={<CategoryProduct/>}/>
       <Route path="/register" element={<Register/>}/>

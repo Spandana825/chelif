@@ -10,8 +10,11 @@ import { FaHouseUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
 import useCategory from '../../hooks/useCategory';
 import SearchInput from '../Form/SearchInput';
+import { useCart } from '../../context/cart';
+import {Badge} from 'antd'
 const Header = () => {
   const [auth,setAuth]=useAuth();
+  const [cart]=useCart();
   const categories=useCategory()
   const handleLogout=()=>{
     setAuth({
@@ -43,8 +46,10 @@ const Header = () => {
             </div> */}
                     <nav className="navbar navbar-expand-lg bg-secondary-subtle">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="/">
+    <Link className="navbar-brand" to="/cart">
+      <Badge size="small" count={cart?.length} showZero>
     <FaShoppingCart />
+    </Badge>
     </Link>
     <Link className="navbar-brand" to="/">
      <FaHeart/>

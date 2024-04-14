@@ -8,7 +8,10 @@ import { Prices } from '../../components/Prices.js';
 import {Radio} from "antd"
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/cart.js';
+import toast from "react-hot-toast"
 const Shop = () => {
+  const [cart,setCart]=useCart([]);
   const [products,setProducts]=useState([]);
   const [categories,setCategories]=useState([]);
   const [checked,setChecked]=useState([]);
@@ -144,12 +147,13 @@ const loadMore=async()=>{
                     
                       <div className="card m-2" style={{ width: "16rem" }} key={p._id}> 
                       <img src={`/api/v1/product/get-product-photo/${p._id}`} className="card-img-top" alt={p.name} onClick={()=>navigate(`/product/${p.slug}`)}/>
-                      <div className="card-body" onClick={()=>navigate(`/product/${p.slug}`)}>
+                      <div className="card-body">
                         <h5 className="card-title" onClick={()=>navigate(`/product/${p.slug}`)}>{p.name}</h5>
                         <p className="card-text">
                         <strike className="strike" >₹{p.original_price}</strike> <span className='price'>₹{p.selling_price}</span> <span className='discount'>({p.discount}% OFF)</span>
                         </p>
-                        <a href="#" className="btn btn-primary addtocart">
+                        <a href="#" className="btn btn-primary addtocart" onClick={()=>{setCart([...cart,p]);
+                          toast.success("product added to cart")}}>
                           Add to cart
                         </a>
                       </div>
